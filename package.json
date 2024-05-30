@@ -1,0 +1,12 @@
+{
+  "name": "rent-my-gear",
+  "version": "1.0.0",
+  "description": "rent-my-gear",
+  "main": "index.js",
+  "repository": "git@github.com:yaroslavgubich/rent-my-gear.git",
+  "author": "Your Name <dimitrisreth86@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "node your-build-script.js"
+  }
+}
