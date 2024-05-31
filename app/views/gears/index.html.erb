@@ -9,7 +9,7 @@
         <div class="card mb-4">
           <div class="card-body">
             <h5 class="card-title"><%= gear.title %></h5>
-            <p class="card-text"><strong>Price per day:</strong> $<%= gear.price_per_day %></p>
+            <p class="card-text"><strong>Price per day:</strong> £<%= gear.price_per_day %></p>
             <p class="card-text"><strong>Category:</strong> <%= gear.category %></p>
             <p class="card-text"><strong>Availability:</strong> <%= gear.availability ? 'Available' : 'Not Available' %></p>
             <%= link_to 'View', gear_path(gear), class: 'btn btn-primary' %>
