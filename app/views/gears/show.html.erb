@@ -1,0 +1,11 @@
+<h1> Show page</h1>
+
+
+ <li>
+  <p> <%= @gear.title %> </p>
+  <p> <%= @gear.description %> </p>
+  <p> <%= @gear.price_per_day %> </p>
+  <p> <%= @gear.availability %> </p>
+  <p> <%= "Belongs to  #{@gear.user.first_name}" %> </p>
+ </li>
+<%= link_to "Back to all Gears", gears_path %>
