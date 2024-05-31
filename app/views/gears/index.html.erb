@@ -1,0 +1,9 @@
+<h1> Our List Of Gears</h1>
+
+<% @gears.each do |gear| %>
+ <li>
+  <p> <%= gear.title %> </p>
+  <p> <%= "Belongs to  #{gear.user.first_name}" %> </p>
+  <%= link_to "Show", gear%>
+ </li>
+<% end %>
