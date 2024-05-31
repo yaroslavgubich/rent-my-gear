@@ -1,11 +1,18 @@
-<h1> Show page</h1>
-
-
- <li>
-  <p> <%= @gear.title %> </p>
-  <p> <%= @gear.description %> </p>
-  <p> <%= @gear.price_per_day %> </p>
-  <p> <%= @gear.availability %> </p>
-  <p> <%= "Belongs to  #{@gear.user.first_name}" %> </p>
- </li>
-<%= link_to "Back to all Gears", gears_path %>
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="card-title"><%= @gear.title %></h1>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><strong>Description:</strong> <%= @gear.description %></p>
+      <p class="card-text"><strong>Price per day:</strong> £<%= @gear.price_per_day %></p>
+      <p class="card-text"><strong>Category:</strong> <%= @gear.category %></p>
+      <p class="card-text"><strong>Availability:</strong> <%= @gear.availability ? 'Available' : 'Not Available' %></p>
+    </div>
+    <div class="card-footer text-right">
+      <%= link_to 'Edit', edit_gear_path(@gear), class: 'btn btn-primary' %>
+      <%= link_to 'Delete', @gear, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      <%= link_to 'Back', gears_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>
