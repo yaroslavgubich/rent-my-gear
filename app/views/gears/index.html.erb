@@ -1,9 +1,23 @@
-<h1> Our List Of Gears</h1>
+<div class="container">
+  <h1 class="my-4">All Gears</h1>
 
-<% @gears.each do |gear| %>
- <li>
-  <p> <%= gear.title %> </p>
-  <p> <%= "Belongs to  #{gear.user.first_name}" %> </p>
-  <%= link_to "Show", gear%>
- </li>
-<% end %>
+  <%= link_to 'New Gear', new_gear_path, class: 'btn btn-success mb-4' %>
+
+  <div class="row">
+    <% @gears.each do |gear| %>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title"><%= gear.title %></h5>
+            <p class="card-text"><strong>Price per day:</strong> £<%= gear.price_per_day %></p>
+            <p class="card-text"><strong>Category:</strong> <%= gear.category %></p>
+            <p class="card-text"><strong>Availability:</strong> <%= gear.availability ? 'Available' : 'Not Available' %></p>
+            <%= link_to 'View', gear_path(gear), class: 'btn btn-primary' %>
+            <%= link_to 'Edit', edit_gear_path(gear), class: 'btn btn-secondary' %>
+            <%= link_to 'Delete', gear, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
