@@ -1,4 +1,7 @@
 class GearsController < ApplicationController
+
+  before_action :authorize_gear, only: [:destroy]
+  before_action :set_gear, only: [:show, :edit, :update, :destroy]
   # GET /gears
   def index
     @gears = Gear.all
@@ -50,5 +53,13 @@ class GearsController < ApplicationController
 
   def gear_params
     params.require(:gear).permit(:title, :description, :price_per_day, :category, :availability)
+  end
+    def set_gear
+    @gear = Gear.find(params[:id])
+  end
+
+
+  def authorize_gear
+    authorize @gear
   end
 end

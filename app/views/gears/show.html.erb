@@ -11,7 +11,8 @@
     </div>
     <div class="card-footer text-right">
       <%= link_to 'Edit', edit_gear_path(@gear), class: 'btn btn-primary' %>
-      <%= link_to 'Delete', @gear, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      <%= link_to 'Delete', gear_path(@gear), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+
       <%= link_to 'Back', gears_path, class: 'btn btn-secondary' %>
     </div>
   </div>

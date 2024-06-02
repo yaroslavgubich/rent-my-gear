@@ -9,3 +9,4 @@
 #   end
 
 Gear.create(title: "Mountain bike", description: "its a mountain bike", price_per_day: 27, category: "bikes", availability: true, user_id: 2)
+Gear.create(title: "Snowboard", description: "have fun", price_per_day: 27, category: "soirt", availability: true)
