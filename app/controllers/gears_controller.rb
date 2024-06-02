@@ -1,12 +1,14 @@
 class GearsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_gear, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
   # GET /gears
   def index
     @gears = Gear.all
   end
-
   # GET /gears/1
   def show
-    @gear = Gear.find(params[:id])
+    @booking = @gear.bookings.build
   end
 
   # Get /gears/new
@@ -18,21 +20,21 @@ class GearsController < ApplicationController
   def create
     @gear = Gear.new(gear_params)
     @gear.user_id = current_user.id
+    puts "Current user: #{current_user.inspect}"
     if @gear.save
       redirect_to gear_path(@gear)
     else
+      puts @gear.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end
 
   # GET /gears/1/edit
   def edit
-    @gear = Gear.find(params[:id])
   end
 
   # PATCH/PUT
   def update
-    @gear = Gear.find(params[:id])
     if @gear.update(gear_params)
       redirect_to gear_path(@gear)
     else
@@ -41,7 +43,6 @@ class GearsController < ApplicationController
   end
 
   def destroy
-    @gear = Gear.find(params[:id])
     @gear.destroy
     redirect_to gears_path, status: :see_other
   end
@@ -50,5 +51,9 @@ class GearsController < ApplicationController
 
   def gear_params
     params.require(:gear).permit(:title, :description, :price_per_day, :category, :availability)
+  end
+
+  def set_gear
+    @gear = Gear.find(params[:id])
   end
 end

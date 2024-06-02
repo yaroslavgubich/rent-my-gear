@@ -2,6 +2,17 @@
   <h1 class="my-4">
 
   <%= form_with(model: @gear, local: true, html: { class: 'row g-3' }) do |form| %>
+    <% if @gear.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@gear.errors.count, "error") %> prohibited this gear from being saved:</h2>
+        <ul>
+          <% @gear.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <div class="mb-3">
       <%= form.label :title, class: 'form-label' %>
       <%= form.text_field :title, class: 'form-control', placeholder: 'Enter gear title' %>
