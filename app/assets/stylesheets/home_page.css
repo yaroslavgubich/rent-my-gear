@@ -95,6 +95,14 @@ body {
 }
 
 /* Home page body */
+.central-advert {
+  width: 100%;
+  height: 100vh;
+  background-image: url("main_image_home_page.png");
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+}
 .css-test {
   color: red;
 }
