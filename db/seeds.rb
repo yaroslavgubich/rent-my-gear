@@ -8,4 +8,4 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Gear.create(title: "Mountain bike", description: "its a mountain bike", price_per_day: 27, category: "bikes", availability: true, user_id: 2)
+Gear.create(title: "Mountain Bike", description: "its a mountain bike", price_per_day: 27, category: "bikes", availability: true, user_id: 2)
