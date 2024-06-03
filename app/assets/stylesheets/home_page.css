@@ -2,6 +2,53 @@ body {
   background-color: #f0f6f6;
 }
 
+.custom_header {
+  width: 100%;
+  background-color: #cddfe7;
+  /* border: 1px solid red;  */
+}
+
+.custom_header .custom_content {
+  margin: auto;
+  width: 1280px;
+  height: 92px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.custom_header .logo {
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+}
+
+.custom_header .login {
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+  border: 1px solid gray;
+}
+
+.login-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: gray;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 4.5px;
+  transition: 0.7s;
+}
+
+.login-btn:hover {
+  text-decoration: underline;
+  color: rgb(0, 134, 251);
+}
 
 .css-test {
   color: red;
