@@ -1,5 +1,4 @@
 <div class="container">
-  <h1 class="my-4">
 
   <%= form_with(model: @gear, local: true, html: { class: 'row g-3' }) do |form| %>
     <% if @gear.errors.any? %>
@@ -14,18 +13,28 @@
     <% end %>
 
     <div class="mb-3">
+      <label class="field-label" for="gear_title">Title</label>
+      <input class="form-control" placeholder="Enter gear title" type="text" name="gear[title]" id="gear_title">
+
+      <!--
       <%= form.label :title, class: 'form-label' %>
       <%= form.text_field :title, class: 'form-control', placeholder: 'Enter gear title' %>
+      -->
     </div>
 
     <div class="mb-3">
+      <label class="field-label" for="gear_description">Description</label>
+      <textarea class="form-control" style="resize:none;" rows="6" placeholder="Enter description" name="gear[description]" id="gear_description"></textarea>
+
+      <!--
       <%= form.label :description, class: 'form-label' %>
       <%= form.text_area :description, class: 'form-control', rows: 4, placeholder: 'Enter description' %>
+      -->
     </div>
 
     <div class="row g-3">
       <div class="col-md-6 mb-3">
-        <%= form.label :price_per_day, class: 'form-label' %>
+        <%= form.label :price_per_day, class: 'field-label' %>
         <div class="input-group">
           <span class="input-group-text">£</span>
           <%= form.number_field :price_per_day, class: 'form-control', placeholder: 'Enter price per day' %>
@@ -33,20 +42,32 @@
       </div>
 
       <div class="col-md-6 mb-3">
-        <%= form.label :category, class: 'form-label' %>
+        <%= form.label :category, class: 'field-label' %>
         <%= form.text_field :category, class: 'form-control', placeholder: 'Enter category' %>
       </div>
     </div>
 
-    <div class="mb-3">
-      <%= form.label :availability, class: 'form-label' %>
-      <%= form.check_box :availability, class: 'form-check-input' %>
-      <%= form.label :availability, 'Available', class: 'form-check-label' %>
+    <div class="content-center">
+      <div style="text-align:center;">
+        <label class="field-label" style="padding: 0px;" for="gear_availability">Availiable now</label> <br />
+        <input class="form-check-input"  type="checkbox" value="1" name="gear[availability]" id="gear_availability" checked>
+      </div>
+        <!--
+        <%= form.label :availability, class: 'form-label' %>
+        <%= form.check_box :availability, class: 'form-check-input' %>
+        <%= form.label :availability, 'Available', class: 'form-check-label' %>
+        -->
     </div>
+    <hr />
 
-    <div class="mb-3">
-      <%= form.submit button_text, class: 'btn btn-primary' %>
+    <div class="content-center">
+      <%= form.submit button_text, class: 'std-btn' %>
     </div>
-  <% end %>
-  <%= link_to "Back to all Gears", gears_path, class: 'btn btn-primary' %>
+    <hr />
+
+    <% end %>
+
+    <div class="content-center">
+      <%= link_to "Back to all Gears", gears_path, class: 'std-btn' %>
+    </div>
 </div>
