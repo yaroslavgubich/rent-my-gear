@@ -8,5 +8,4 @@ class PagesController < ApplicationController
   def index
    @gears = Gear.all
   end
-
 end

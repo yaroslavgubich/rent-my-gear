@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <h1>My Bookings</h1>
+
+  <% if notice %>
+    <div class="alert alert-success"><%= notice %></div>
+  <% end %>
+
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title"><%= booking.gear.title %></h5>
+            <p class="card-text"><strong>Start Date:</strong> <%= booking.start_date %></p>
+            <p class="card-text"><strong>End Date:</strong> <%= booking.end_date %></p>
+            <p class="card-text"><strong>Total Price:</strong> £<%= booking.total_price %></p>
+            <%= link_to 'View Gear', gear_path(booking.gear), class: 'btn btn-primary' %>
+            <%= form_with model: booking, method: :delete, local: true do |form| %>
+              <%= form.submit 'Cancel Booking', data: { confirm: 'Are you sure you want to cancel this booking?' }, class: 'btn btn-danger' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

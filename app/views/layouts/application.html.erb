@@ -7,12 +7,19 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "home_page", media: 'all', data: { turbolinks: false } %>
+
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
+
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key == 'notice' ? 'success' : 'danger' %>"><%= value %></div>
+    <% end %>
+
     <%= yield %>
 
   </body>

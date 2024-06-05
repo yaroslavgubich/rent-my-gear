@@ -1,0 +1,287 @@
+/* Home Page header */
+
+body {
+  background-color: #f0f6f6;
+}
+
+.custom_header {
+  width: 100%;
+  background-color: #a1b7b291;
+  /* border: 1px solid red;  */
+}
+
+.custom_header .custom_content {
+  margin: auto;
+  width: 1280px;
+  height: 92px;
+}
+
+.top-header {
+  height: 92px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom_header .logo {
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+}
+
+.custom_header .login {
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+  border: 1px solid gray;
+}
+
+.login-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: gray;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 4.5px;
+  transition: 0.7s;
+}
+
+.login-btn:hover {
+  text-decoration: underline;
+  color: rgb(0, 134, 251);
+}
+
+/* Home Page nav bar */
+
+.custom-navbar {
+  width: 100%;
+  height: 32px;
+  background-color: #d3d6d7;
+}
+
+.custom-navbar > .navbar-content {
+  margin: auto;
+  width: 1280px;
+  height: 32px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar-content > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-content > ul > li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.navbar-content > ul > li > a {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  color: gray;
+  transition: 0.7s;
+}
+
+.navbar-content > ul > li > a:hover {
+  color: rgb(0, 134, 251);
+}
+
+/* Home page body */
+.central-advert {
+  width: 100%;
+  height: 100vh;
+  background-image: url("main_image_home_page.png");
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+.page-content {
+  margin: auto;
+  width: 1280px;
+  height: 100vh; /* debugging option will be removed after finish */
+  border: none;
+  /* filter: blur(4px); */
+}
+
+.page-content > .legenda {
+  display: block;
+  width: 100%;
+  font-size: 26px;
+  padding: 150px 30px 0 30px;
+}
+
+.page-content > .legenda > p {
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
+  color: #000000;
+  text-shadow: 0 0 20px#000000;
+}
+
+.page-content > .gear-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.page-content .gear-box {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  margin-top: 80px;
+}
+
+.custom-btn {
+  display: inline-block;
+  padding: 8px 15px 8px 15px;
+  border: 4px solid #bdcbc1;
+  border-radius: 8px;
+  background-color: #c1cec347;
+  box-shadow: 4px 5px 13px #b9c6be;
+  color: white;
+  font-size: 32px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.7s;
+}
+
+.custom-btn:hover {
+  background-color: #c1cec3b8;
+  border-color: #6d7c7d;
+  box-shadow: -4px -5px 26px #6d7c7d;
+  /* font-weight: bold; */
+}
+
+.content-box-login {
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+  background-image: url("bike_login.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.login-container {
+  margin: auto;
+  width: 20%;
+  margin-top: 100px;
+}
+
+.login-form {
+  border: 2px solid gray;
+  border-radius: 8px;
+  background-color: #c4d2cf7a;
+  padding: 20px;
+}
+
+.login-form > p {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #626262;
+  text-align: center;
+}
+
+.content-center {
+  display: flex;
+  justify-content: center;
+}
+
+.cst-login-btn {
+  padding: 0px 8px 0px 8px;
+  margin-bottom: 20px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  background-color:#c4d2cf;
+  font-size: 32px;
+  color: gray;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.7s;
+}
+
+.cst-login-btn:hover {
+  padding: 0 48px 0 48px;
+  letter-spacing: 6px;
+}
+
+.shared-links-login {
+  text-align: center;
+}
+
+.shared-links-login a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-shadow: 0px 0px 8px black;
+  transition: 0.7s;
+}
+
+.shared-links-login a:hover {
+  text-decoration: underline;
+}
+
+
+/* Sign In */
+
+.content-box-signin {
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+  background-image: url("sign_in_background_modified.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* New Gear page */
+
+.content-box-new-gear {
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+  background-image: url("new_gear_modified.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.new-gear-container {
+  margin: auto;
+  width: 40%;
+  margin-top: 100px;
+}
+
+.field-label {
+  color: #474747;
+  font-size: 28px;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.std-btn {
+  font-size: 24px;
+  color: gray;
+  background-color: #e2e2e2b0;
+  border: 1px solid gray;
+  border-radius: 8px;
+  width: 250px;
+  text-align: center;
+  text-decoration: none;
+  padding: 4px;
+  transition: 0.7s;
+}
+
+.std-btn:hover {
+  background-color: #f0bc67bb;
+}

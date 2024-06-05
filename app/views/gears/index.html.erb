@@ -13,23 +13,13 @@
             <p class="card-text"><strong>Category:</strong> <%= gear.category %></p>
             <p class="card-text"><strong>Availability:</strong> <%= gear.availability ? 'Available' : 'Not Available' %></p>
             <%= link_to 'View', gear_path(gear), class: 'btn btn-primary' %>
+            <% if user_signed_in? %>
             <%= link_to 'Edit', edit_gear_path(gear), class: 'btn btn-secondary' %>
             <%= link_to 'Delete', gear, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            <% end %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-</div>
-
-
-<div class="row">
-    <div class="col-md-6">
-      <div class="card text-center mb-4">
-        <div class="card-body">
-          <h5 class="card-title">List Your Gear</h5>
-          <%= link_to 'List Your Gear', new_gear_path, class: 'btn btn-success' %>
-        </div>
-      </div>
-    </div>
 </div>
