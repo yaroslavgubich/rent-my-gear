@@ -1,7 +1,6 @@
 class GearsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_gear, only: [:show, :edit, :update, :destroy]
-  before_action :authorize_user!, only: [:edit, :update, :destroy]
   # GET /gears
   def index
     @gears = Gear.all
@@ -10,12 +9,10 @@ class GearsController < ApplicationController
   def show
     @booking = @gear.bookings.build
   end
-
   # Get /gears/new
   def new
     @gear = Gear.new
   end
-
   # POST /gears
   def create
     @gear = Gear.new(gear_params)
@@ -28,11 +25,9 @@ class GearsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
   # GET /gears/1/edit
   def edit
   end
-
   # PATCH/PUT
   def update
     if @gear.update(gear_params)
@@ -41,18 +36,14 @@ class GearsController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-
   def destroy
     @gear.destroy
     redirect_to gears_path, status: :see_other
   end
-
   private
-
   def gear_params
     params.require(:gear).permit(:title, :description, :price_per_day, :category, :availability)
   end
-
   def set_gear
     @gear = Gear.find(params[:id])
   end
