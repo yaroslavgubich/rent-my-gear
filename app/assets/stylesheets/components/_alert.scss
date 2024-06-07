@@ -1,6 +1,29 @@
-.alert {
+/* app/assets/stylesheets/components/_alert.scss */
+.flash-message {
   position: fixed;
   bottom: 16px;
   right: 16px;
   z-index: 1000;
+  width: 300px;  
+  font-size: 0.875rem;  
+
+  animation: fadeOut 4s forwards, hideElement 6s forwards !important;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hideElement {
+  0% {
+    display: block;
+  }
+  100% {
+    display: none;
+  }
 }
