@@ -117,9 +117,10 @@ body {
   height: 100vh;
 
   background-image: url("main_image_home_page.png");
-  background-repeat: no-repeat, repeat;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
   /* opacity: 0.7; */
 }
 
@@ -127,7 +128,9 @@ body {
   margin: auto;
   width: 1280px;
   height: 100vh; /* debugging option will be removed after finish */
-  border: none;
+  background-color: #ffffff30;
+  box-shadow: 0px 0px 45px #ffffff61;
+  background-attachment: fixed;
   /* filter: blur(4px); */
 }
 
@@ -138,7 +141,7 @@ body {
   padding: 150px 30px 0 30px;
 }
 
-.page-content > .legenda > p {
+.page-content > .legenda p {
   text-indent: 50px;
   text-align: justify;
   letter-spacing: 3px;
@@ -188,6 +191,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .login-container {
@@ -260,6 +264,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* New Gear page */
@@ -272,6 +277,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .new-gear-container {
