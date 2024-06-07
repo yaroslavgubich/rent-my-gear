@@ -30,10 +30,10 @@
   <div class="navbar-content">
     <ul>
       <li> <a href="/">Home</a> </li>
-      <li> <a href="#">View Items</a> </li>
+      <li> <a href="/gears">View Items</a> </li>
     <% if user_signed_in? %>
-      <li> <a href="#">Rent Your Items</a> </li>
-      <li> <a href="#">Messages</a> </li>
+      <li> <a href="/gears/new">Rent Your Items</a> </li>
+      <!-- <li> <a href="#">Messages</a> </li> -->
     <% else %>
       <li> <a href="/users/sign_up">Create Account</a> </li>
     <% end %>
