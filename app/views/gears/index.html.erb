@@ -8,6 +8,10 @@
       <div class="col-md-4">
         <div class="card mb-4">
           <div class="card-body">
+            <% if gear.photo.present? %>
+            <%= cl_image_tag(gear.photo.key,
+      width: 200, height: 100, crop: :fit) %>
+          <%end%>
             <h5 class="card-title"><%= gear.title %></h5>
             <p class="card-text"><strong>Price per day:</strong> £<%= gear.price_per_day %></p>
             <p class="card-text"><strong>Category:</strong> <%= gear.category %></p>
