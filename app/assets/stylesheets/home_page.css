@@ -132,6 +132,9 @@ body {
   margin: auto;
   width: 1280px;
   background-attachment: fixed;
+  background-color: #ffffff30;
+  box-shadow: 0px 0px 37px #ffffff5e;
+  height: 200vh;
 }
 
 .page-content > .legenda {
