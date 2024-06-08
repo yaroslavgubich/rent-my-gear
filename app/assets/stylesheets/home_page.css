@@ -72,6 +72,10 @@ body {
 
 /* Home Page nav bar */
 
+.page-content {
+  min-width: 1024px;
+}
+
 .custom-navbar {
   width: 100%;
   height: 32px;
@@ -114,7 +118,7 @@ body {
 .central-advert {
   max-width: 100%;
   min-width: 1024px;
-  height: 100vh;
+  height: 200vh;
 
   background-image: url("main_image_home_page.png");
   background-repeat: no-repeat;
@@ -127,11 +131,7 @@ body {
 .page-content {
   margin: auto;
   width: 1280px;
-  height: 100vh; /* debugging option will be removed after finish */
-  /* background-color: #ffffff30; */
-  /* box-shadow: 0px 0px 45px #ffffff61; */
   background-attachment: fixed;
-  /* filter: blur(4px); */
 }
 
 .page-content > .legenda {
@@ -189,7 +189,7 @@ body {
 .content-box-login {
   display: inline-block;
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   background-image: url("bike_login.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -262,7 +262,7 @@ body {
 .content-box-signin {
   display: inline-block;
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   background-image: url("sign_in_background_modified.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -275,7 +275,7 @@ body {
 .content-box-new-gear {
   display: inline-block;
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   background-image: url("new_gear_modified.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -291,7 +291,7 @@ body {
 
 .field-label {
   color: #474747;
-  font-size: 28px;
+  font-size: 18px;
   font-weight: bold;
   padding-left: 20px;
 }
