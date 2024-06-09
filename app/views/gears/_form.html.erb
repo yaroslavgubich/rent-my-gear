@@ -37,13 +37,25 @@
         <%= form.label :price_per_day, class: 'field-label' %>
         <div class="input-group">
           <span class="input-group-text">£</span>
-          <%= form.number_field :price_per_day, class: 'form-control', placeholder: 'Enter price per day' %>
+
+          <%= form.number_field :price_per_day, class: 'form-control', placeholder: 'Enter price per day', min: 0 %>
         </div>
       </div>
 
       <div class="col-md-6 mb-3">
+        <label class="field-label" for="gear_category">Select Category</label>
+          <select class="form-control" name="gear[category]" id="gear_category">
+            <option value="Road Bikes">Road Bikes</option>
+            <option value="Mountain Bikes">Mountain Bikes</option>
+            <option value="Electric Bikes">Electric Bikes</option>
+            <option value="Kids' Bikes">Kids' Bikes</option>
+          </select>
+
+      <!--
         <%= form.label :category, class: 'field-label' %>
         <%= form.text_field :category, class: 'form-control', placeholder: 'Enter category' %>
+      -->
+
       </div>
     </div>
 
@@ -61,6 +73,9 @@
     <hr />
 
     <div class="content-center">
+
+      <%= form.file_field :photo %>
+
       <%= form.submit button_text, class: 'std-btn' %>
     </div>
     <hr />
@@ -68,6 +83,6 @@
     <% end %>
 
     <div class="content-center">
-      <%= link_to "Back to all Gears", gears_path, class: 'std-btn' %>
+      <%= link_to "Back to all Bikes", gears_path, class: 'std-btn' %>
     </div>
 </div>
