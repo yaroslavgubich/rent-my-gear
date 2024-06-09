@@ -14,7 +14,7 @@
             <p class="card-text"><strong>Start Date:</strong> <%= booking.start_date %></p>
             <p class="card-text"><strong>End Date:</strong> <%= booking.end_date %></p>
             <p class="card-text"><strong>Total Price:</strong> £<%= booking.total_price %></p>
-            <%= link_to 'View Gear', gear_path(booking.gear), class: 'btn btn-primary' %>
+            <%= link_to 'View Bike', gear_path(booking.gear), class: 'btn btn-primary' %>
             <%= form_with model: booking, method: :delete, local: true do |form| %>
               <%= form.submit 'Cancel Booking', data: { confirm: 'Are you sure you want to cancel this booking?' }, class: 'btn btn-danger' %>
             <% end %>

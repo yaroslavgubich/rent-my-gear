@@ -9,7 +9,7 @@
       width: 200, height: 100, crop: :fit) %>
           <%end%>
       <p class="card-text"><strong>Description:</strong> <%= @gear.description %></p>
-      
+
       <p class="card-text"><strong>Price per day:</strong> £<%= @gear.price_per_day %></p>
       <p class="card-text"><strong>Category:</strong> <%= @gear.category %></p>
       <p class="card-text"><strong>Availability:</strong> <%= @gear.availability ? 'Available' : 'Not Available' %></p>
@@ -24,9 +24,9 @@
   </div>
   <% if @gear.availability %>
     <div class="card mt-5">
-      
+
       <div class="card-header">
-        <h2>Book This Gear</h2>
+        <h2>Book This Bike</h2>
       </div>
       <div class="card-body">
         <%= form_with(model: [@gear, @booking], local: true) do |form| %>
