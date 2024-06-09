@@ -5,4 +5,8 @@ class Gear < ApplicationRecord
 
   validates :title, :description, :price_per_day, :category, :availability, presence: true
   validates :price_per_day, numericality: { greater_than_or_equal_to: 0 }
+
+  def owned_by?(user)
+    self.user == user
+  end
 end

@@ -17,7 +17,7 @@
             <p class="card-text"><strong>Category:</strong> <%= gear.category %></p>
             <p class="card-text"><strong>Availability:</strong> <%= gear.availability ? 'Available' : 'Not Available' %></p>
             <%= link_to 'View', gear_path(gear), class: 'btn btn-primary' %>
-            <% if user_signed_in? %>
+            <% if user_signed_in? && gear.owned_by?(current_user) %>
             <%= link_to 'Edit', edit_gear_path(gear), class: 'btn btn-secondary' %>
             <%= link_to 'Delete', gear, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
             <% end %>
