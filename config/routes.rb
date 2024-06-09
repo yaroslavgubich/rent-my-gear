@@ -6,6 +6,8 @@ Rails.application.routes.draw do
    end
 
    resources :bookings, only: [:index, :destroy]
+   get 'my_bookings', to: 'bookings#index', as: 'my_bookings'
+   get 'my_gear', to: 'gears#my_gear', as: 'my_gears'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

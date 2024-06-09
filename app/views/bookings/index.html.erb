@@ -16,7 +16,7 @@
             <p class="card-text"><strong>Total Price:</strong> £<%= booking.total_price %></p>
             <%= link_to 'View Bike', gear_path(booking.gear), class: 'btn btn-primary' %>
             <%= form_with model: booking, method: :delete, local: true do |form| %>
-              <%= form.submit 'Cancel Booking', data: { confirm: 'Are you sure you want to cancel this booking?' }, class: 'btn btn-danger' %>
+              <%= form.submit 'Cancel Booking', data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to cancel this booking?' }, class: 'btn btn-danger' %>
             <% end %>
           </div>
         </div>
