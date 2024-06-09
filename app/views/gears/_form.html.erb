@@ -37,7 +37,7 @@
         <%= form.label :price_per_day, class: 'field-label' %>
         <div class="input-group">
           <span class="input-group-text">£</span>
-          <%= form.number_field :price_per_day, class: 'form-control', placeholder: 'Enter price per day' %>
+          <%= form.number_field :price_per_day, class: 'form-control', placeholder: 'Enter price per day', min: 0 %>
         </div>
       </div>
 

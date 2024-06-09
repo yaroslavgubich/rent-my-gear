@@ -35,13 +35,13 @@
                 </ul>
               </div>
             <% end %>
-            <div class="mb-3">
+           <div class="mb-3">
               <%= form.label :start_date, class: 'form-label' %>
-              <%= form.date_field :start_date, class: 'form-control' %>
+              <%= form.date_field :start_date, class: 'form-control date-picker' %>
             </div>
             <div class="mb-3">
               <%= form.label :end_date, class: 'form-label' %>
-              <%= form.date_field :end_date, class: 'form-control' %>
+              <%= form.date_field :end_date, class: 'form-control date-picker' %>
             </div>
             <div class="text-right">
               <%= form.submit 'Book Now', class: 'btn btn-primary' %>
@@ -50,5 +50,19 @@
         </div>
       </div>
     <% end %>
-   <% end %>
+  <% end %>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const datePickers = document.querySelectorAll(".date-picker");
+
+  datePickers.forEach(function(datePicker) {
+    datePicker.addEventListener("click", function() {
+      this.showPicker(); // For modern browsers
+      // Alternatively, focus the input if showPicker() is not supported
+      this.focus();
+    });
+  });
+});
+</script>
