@@ -19,7 +19,28 @@
       <div class="gear-box">
         <a class="custom-btn" href="/gears">All Bikes</a>
       </div>
+    </div>
 
+    <div class="gear-listings" style="margin-top: 150px;">
+      <h2>Explore our best deals</h2>
+      <div class="gear-grid">
+        <% @gears.each do |gear| %>
+          <div class="gear-card">
+            <% if gear.photo.attached? %>
+              <%= cl_image_tag gear.photo.key, transformation: [{width: 600, height: 450, crop: 'fill', gravity: 'auto'}], class: 'gear-img', alt: gear.title %>
+            <% else %>
+              <div class="no-image-placeholder">
+                <p>No image available</p>
+              </div>
+            <% end %>
+            <div class="gear-info">
+              <h3><%= gear.title %></h3>
+              <p><%= number_to_currency(gear.price_per_day, unit: "£") %> per day</p>
+              <%= link_to 'View Details', gear_path(gear), class: 'btn btn-primary' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
