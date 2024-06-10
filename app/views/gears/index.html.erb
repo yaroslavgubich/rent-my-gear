@@ -18,23 +18,29 @@
 
     <% @gears.each do |gear| %>
       <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="card-body">
+        <div class="card mb-4 rounded-4">
+          <div class="bike-image"></div>
 
             <!-- % if gear.photo.present? % -->
               <!-- %= cl_image_tag(gear.photo.key, width: 200, height: 100, crop: :fit) % -->
             <!-- %end% -->
+            <div class="msg-at-image">
+              <span class="border border-2 border-success fs-4 text-success ps-2 pe-2 rounded-4" style="background-color: #ffffff;">It's Your Item</span>
+            </div>
 
-            <h5 class="card-title"><%= gear.title %></h5>
-            <p class="card-text"><strong>Price per day:</strong> £<%= gear.price_per_day %></p>
-            <p class="card-text"><strong>Category:</strong> <%= gear.category %></p>
-            <p class="card-text"><strong>Availability:</strong> <%= gear.availability ? 'Available' : 'Not Available' %> </p>
-            <%= link_to 'View', gear_path(gear), class: 'btn btn-primary' %>
+          <div class="card-body text-center pb-4">
 
-            <% if user_signed_in? && gear.owned_by?(current_user) %>
-              <%= link_to 'Edit', edit_gear_path(gear), class: 'btn btn-secondary' %>
-              <%= link_to 'Delete', gear, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-            <% end %>
+            <p class="card-title fw-bold fs-4 mb-4"><%= gear.title %></p>
+            <p class="card-text fs-5 mb-4">Price per day: <%= gear.price_per_day %>$</p>
+            <!-- <p class="card-text"><strong>Category:</strong> <%= gear.category %></p> -->
+            <!-- <p class="card-text"><strong>Availability:</strong> <%= gear.availability ? 'Available' : 'Not Available' %> </p> -->
+            <%= link_to 'View Details', gear_path(gear), class: 'std-btn' %>
+
+
+            <!-- % if user_signed_in? && gear.owned_by?(current_user) % -->
+              <!-- %= link_to 'Edit', edit_gear_path(gear), class: 'btn btn-secondary' % -->
+              <!-- %= link_to 'Delete', gear, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' % -->
+            <!-- % end % -->
 
           </div>
         </div>
