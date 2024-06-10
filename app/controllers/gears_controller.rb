@@ -17,6 +17,10 @@ class GearsController < ApplicationController
     @gear = Gear.new
   end
 
+  def my_gear
+    @gears = current_user.gears
+  end
+
   # POST /gears
   def create
     @gear = Gear.new(gear_params)
@@ -31,8 +35,11 @@ class GearsController < ApplicationController
   end
 
   # GET /gears/1/edit
+
   def edit
+    @gear = Gear.find(params[:id])
   end
+
 
   # PATCH/PUT /gears/1
   def update
