@@ -11,53 +11,53 @@
         </ul>
       </div>
     <% end %>
-
     <div class="mb-3">
-      <label class="field-label" for="gear_title">Title</label>
-      <input class="form-control" placeholder="Enter gear title" type="text" name="gear[title]" id="gear_title">
-
+      <%= form.label :title, class: 'field-label' %>
+      <%= form.text_field :title, class: 'form-control', placeholder: 'Enter gear title', value: @gear.title %>
+    </div>
       <!--
       <%= form.label :title, class: 'form-label' %>
       <%= form.text_field :title, class: 'form-control', placeholder: 'Enter gear title' %>
       -->
-    </div>
 
-    <div class="mb-3">
-      <label class="field-label" for="gear_description">Description</label>
-      <textarea class="form-control" style="resize:none;" rows="6" placeholder="Enter description" name="gear[description]" id="gear_description"></textarea>
 
+     <div class="mb-3">
+      <%= form.label :description, class: 'field-label' %>
+      <%= form.text_area :description, class: 'form-control', rows: 6, placeholder: 'Enter description', value: @gear.description %>
+     </div>
       <!--
       <%= form.label :description, class: 'form-label' %>
       <%= form.text_area :description, class: 'form-control', rows: 4, placeholder: 'Enter description' %>
       -->
-    </div>
+
 
     <div class="row g-3">
       <div class="col-md-6 mb-3">
         <%= form.label :price_per_day, class: 'field-label' %>
         <div class="input-group">
           <span class="input-group-text">£</span>
-
-          <%= form.number_field :price_per_day, class: 'form-control', placeholder: 'Enter price per day', min: 0 %>
+          <%= form.number_field :price_per_day, class: 'form-control', placeholder: 'Enter price per day', min: 0, value: @gear.price_per_day %>
         </div>
       </div>
 
-      <div class="col-md-6 mb-3">
-        <label class="field-label" for="gear_category">Select Category</label>
-          <select class="form-control" name="gear[category]" id="gear_category">
-            <option value="Road Bikes">Road Bikes</option>
-            <option value="Mountain Bikes">Mountain Bikes</option>
-            <option value="Electric Bikes">Electric Bikes</option>
-            <option value="Kids' Bikes">Kids' Bikes</option>
-          </select>
+
+    <div class="col-md-6 mb-3" >
+      <label class="field-label" for="gear_category">Select Category</label>
+      <select class="form-control" name="gear[category]" id="gear_category">
+        <option value="Road Bikes" <%= 'selected' if @gear.category == 'Road Bikes' %>>Road Bikes</option>
+        <option value="Mountain Bikes" <%= 'selected' if @gear.category == 'Mountain Bikes' %>>Mountain Bikes</option>
+        <option value="Electric Bikes" <%= 'selected' if @gear.category == 'Electric Bikes' %>>Electric Bikes</option>
+        <option value="Kids' Bikes" <%= 'selected' if @gear.category == "Kids' Bikes" %>>Kids' Bikes</option>
+      </select>
+    </div>
 
       <!--
         <%= form.label :category, class: 'field-label' %>
         <%= form.text_field :category, class: 'form-control', placeholder: 'Enter category' %>
       -->
 
-      </div>
-    </div>
+
+
 
     <div class="content-center">
       <div style="text-align:center;">
