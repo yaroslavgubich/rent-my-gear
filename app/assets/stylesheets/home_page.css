@@ -319,3 +319,45 @@ body {
 .std-btn:hover {
   background-color: #f0bc67bb;
 }
+
+
+/* All Bikes Page */
+.page-content-all-gears {
+  margin: auto;
+  width: 1280px;
+  background-attachment: fixed;
+  /* background-color: #ffffff30;
+  box-shadow: 0px 0px 37px #ffffff5e; */
+  height: 200vh;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-title {
+  display: inline-block;
+  justify-content: left;
+  font-size: 27px;
+  color: white;
+  padding: 8px 20px 0px 20px;
+
+  border-bottom: 3px solid #ffffff;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.button-cell {
+  display: inline-block;
+  padding: 14px 20px 0 0;
+}
+
+.button-cell > .std-btn {
+  color: #ffffff;
+  border-color: #949998;
+}
+
+.page-content-all-gears > hr {
+  color: #ffffff;
+}
