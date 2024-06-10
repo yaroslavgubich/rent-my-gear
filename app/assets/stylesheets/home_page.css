@@ -440,3 +440,38 @@ display: inline-block;
   resize: none;
   color: #000000;
 }
+
+.booking-view {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 300px;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.bike-view-frame {
+  width: 100%;
+  height: 300px;
+  border: 1px solid gray;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.view-img-full {
+  display: inline-block;
+  width: 100%;
+  height: 452px;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.booking-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.booking-menu-content {
+  display: inline-block;
+}
