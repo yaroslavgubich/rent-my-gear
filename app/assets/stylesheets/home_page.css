@@ -31,6 +31,13 @@ body {
   display: inline-block;
   width: 72px;
   height: 72px;
+  position: relative; /* Needed for the left and top properties to take effect */
+  animation: example 2s ; /* Apply the animation */
+}
+
+@keyframes example {
+  0%   {left: -200px; top: 0px;}
+  100% {left: 0px; top: 0px;}
 }
 
 .custom_header .login {
