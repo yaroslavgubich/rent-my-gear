@@ -67,18 +67,20 @@
 
             <!-- Booking start and end time -->
             <div class="booking-menu">
-              <div class="booking-menu-content">
-                <%= form.label :start_date, class: 'card-view-label' %>
-                <%= form.date_field :start_date, class: 'form-control date-picker' %>
-              </div>
 
-              <div class="booking-menu-content">
-                <%= form.label :end_date, class: 'card-view-label' %>
-                <%= form.date_field :end_date, class: 'form-control date-picker' %>
-              </div>
+                <div class="booking-menu-content">
+                  <%= form.label :start_date, class: 'card-view-label' %>
+                  <%= form.date_field :start_date, class: 'form-control date-picker card-view-description view-select-calendare' %>
+                </div>
 
-              <div class="booking-menu-content">
-                <%= form.submit 'Book Now', class: 'std-btn' %>
+                <div class="booking-menu-content">
+                  <%= form.label :end_date, class: 'card-view-label' %>
+                  <%= form.date_field :end_date, class: 'form-control date-picker card-view-description view-select-calendare' %>
+                </div>
+
+                <div class="booking-menu-content">
+                  <%= form.submit 'Book Now', class: 'std-btn' %>
+                </div>
               </div>
           <% end %>
 
@@ -89,12 +91,14 @@
   <br />
   <hr />
 
+    <div class="text-center">
       <% if user_signed_in? && @gear.owned_by?(current_user) %>
         <%= link_to 'Edit', edit_gear_path(@gear), class: 'std-btn' %>
         <%= link_to 'Delete', @gear, method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'std-btn' %>
       <% end %>
       <%= link_to 'Back', gears_path, class: 'std-btn' %>
     </div>
+  </div>
   </div>
 
 </div>

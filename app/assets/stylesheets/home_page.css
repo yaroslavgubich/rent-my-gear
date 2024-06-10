@@ -31,7 +31,7 @@ body {
   display: inline-block;
   width: 72px;
   height: 72px;
-  position: relative; 
+  position: relative;
   animation: example 2s ; /* Apply the animation */
 }
 
@@ -550,4 +550,8 @@ display: inline-block;
 
 .booking-menu-content {
   display: inline-block;
+}
+
+.view-select-calendare {
+  width: 300px;
 }
