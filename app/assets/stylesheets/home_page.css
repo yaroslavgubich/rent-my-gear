@@ -319,7 +319,9 @@ body {
 }
 
 .std-btn:hover {
-  background-color: #f0bc67bb;
+  background-color: #696969bb;
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 
@@ -327,7 +329,7 @@ body {
 .availible-bikes-advert {
 display: inline-block;
   width: 100%;
-  height: auto;
+  min-height: 100vh;
   background-image: url("main_image_home_page.png");
   background-repeat: repeat-y;
   background-position: center;
@@ -391,3 +393,50 @@ display: inline-block;
   right: 20px;
   top: 10px;
  }
+
+ /* View bike info */
+.view-card {
+  display: flex;
+  /* justify-content: space-between; */
+  padding: 20px 0px 50px 0px;
+}
+
+.view-card-img {
+  display: inline-block;
+  width: 800px;
+  height: 460px;
+  padding: 3px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+}
+
+.no-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-image: url("nobike.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.view-card-description {
+  padding: 0px 20px 0px 20px;
+  width: 500px;
+}
+
+.card-view-label {
+  color: #474747;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.card-view-description {
+  width: 100%;
+  padding: 0 8px 0 8px;
+  border-radius: 8px;
+  background-color: #9c9c9c47;
+  resize: none;
+  color: #000000;
+}
