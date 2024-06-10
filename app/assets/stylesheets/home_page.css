@@ -122,10 +122,11 @@ body {
 .central-advert {
   max-width: 100%;
   min-width: 1024px;
-  height: 200vh;
+  min-height: 100vh;
+  /* height: 200vh; */
 
   background-image: url("main_image_home_page.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -138,7 +139,7 @@ body {
   background-attachment: fixed;
   background-color: #ffffff30;
   box-shadow: 0px 0px 37px #ffffff5e;
-  height: 200vh;
+  min-height: 100vh;
 }
 
 .page-content > .legenda {
@@ -196,9 +197,10 @@ body {
 .content-box-login {
   display: inline-block;
   width: 100%;
-  height: 200vh;
+  min-width:1024px;
+  min-height: 100vh;
   background-image: url("bike_login.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -206,7 +208,7 @@ body {
 
 .login-container {
   margin: auto;
-  width: 20%;
+  width: 350px;
   margin-top: 100px;
 }
 
@@ -269,9 +271,9 @@ body {
 .content-box-signin {
   display: inline-block;
   width: 100%;
-  height: 200vh;
+  min-height: 100vh;
   background-image: url("sign_in_background_modified.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -282,7 +284,7 @@ body {
 .content-box-new-gear {
   display: inline-block;
   width: 100%;
-  height: 200vh;
+  min-height: 100vh;
   background-image: url("new_gear_modified.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -322,13 +324,24 @@ body {
 
 
 /* All Bikes Page */
+.availible-bikes-advert {
+display: inline-block;
+  width: 100%;
+  height: auto;
+  background-image: url("main_image_home_page.png");
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
 .page-content-all-gears {
   margin: auto;
   width: 1280px;
   background-attachment: fixed;
   /* background-color: #ffffff30;
   box-shadow: 0px 0px 37px #ffffff5e; */
-  height: 200vh;
 }
 
 .page-header {
