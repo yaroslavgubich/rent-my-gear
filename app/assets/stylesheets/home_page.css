@@ -31,7 +31,7 @@ body {
   display: inline-block;
   width: 72px;
   height: 72px;
-  position: relative; /* Needed for the left and top properties to take effect */
+  position: relative; 
   animation: example 2s ; /* Apply the animation */
 }
 
