@@ -1,5 +1,12 @@
-<div class="container mt-5">
-  <h1>My Bookings</h1>
+<div class="availible-bikes-advert">
+    <div class="page-content-all-gears">
+
+      <!-- Page name and new listing button -->
+      <div class="page-header">
+        <div class="page-title">My Bookings</div>
+        <!-- <div class="button-cell"> <%= link_to 'List Your Bike', new_gear_path, class: 'std-btn' %> </div> -->
+      </div>
+      <hr />
 
   <% if notice %>
     <div class="alert alert-success"><%= notice %></div>
@@ -8,16 +15,30 @@
   <div class="row">
     <% @bookings.each do |booking| %>
       <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title"><%= booking.gear.title %></h5>
-            <p class="card-text"><strong>Start Date:</strong> <%= booking.start_date %></p>
-            <p class="card-text"><strong>End Date:</strong> <%= booking.end_date %></p>
-            <p class="card-text"><strong>Total Price:</strong> £<%= booking.total_price %></p>
-            <%= link_to 'View Bike', gear_path(booking.gear), class: 'btn btn-primary' %>
-            <%= form_with model: booking, method: :delete, local: true do |form| %>
-              <%= form.submit 'Cancel Booking', data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to cancel this booking?' }, class: 'btn btn-danger' %>
+        <div class="card mb-4 rounded-4 adver-shadow">
+
+              <% if booking.gear.photo.present? %>
+                <div class="bike-view-frame">
+                  <%= cl_image_tag(booking.gear.photo.key, class: "booking-view") %>
+                </div>
+              <%else%>
+                <div class="bike-image"></div>
+              <%end%>
+
+              <div class="card-body text-center pb-4">
+                <p class="card-title fw-bold fs-4"><%= booking.gear.title %></p> <hr />
+                <div class="card-view-label">Start Date: <%= booking.start_date %></div>
+                <div class="card-view-label">End Date: <%= booking.end_date %></div>
+                <div class="card-view-label mb-4">Total Price: <%= booking.total_price %>$</div>
+                <%= link_to 'View Bike', gear_path(booking.gear), class: 'std-btn' %>
+                <%= form_with model: booking, method: :delete, local: true do |form| %>
+              <%= form.submit 'Cancel Booking', data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to cancel this booking?' }, class: 'std-btn' %>
             <% end %>
+
+              </div>
+
+          </div>
+
           </div>
         </div>
       </div>
