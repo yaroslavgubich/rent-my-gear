@@ -570,3 +570,18 @@ display: inline-block;
 .adver-shadow {
   box-shadow: 5px 5px 10px gray;
 }
+
+.info-window {
+  display: inline-block;
+  width: 100%;
+  border: 1px solid gray;
+  text-align: center;
+  padding: 20px;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 0 0 10px gray;
+  background-color: #808080a8;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+}
