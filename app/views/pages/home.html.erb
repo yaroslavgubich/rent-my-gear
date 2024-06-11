@@ -11,6 +11,8 @@
       </p>
     </div>
 
+    <!-- two buttons not usible -->
+    <!--
     <div class="gear-content">
       <div class="gear-box">
         <a class="custom-btn" href="/gears/new">List Your Bike</a>
@@ -20,27 +22,43 @@
         <a class="custom-btn" href="/gears">All Bikes</a>
       </div>
     </div>
+    -->
 
-    <div class="gear-listings" style="margin-top: 150px;">
-      <h2>Explore our best deals</h2>
-      <div class="gear-grid">
+    <div class="best-deals">
+      Explore our best deals
+    </div>
+    <hr />
+    <div class="row">
         <% @gears.each do |gear| %>
-          <div class="gear-card">
-            <% if gear.photo.attached? %>
-              <%= cl_image_tag gear.photo.key, transformation: [{width: 600, height: 450, crop: 'fill', gravity: 'auto'}], class: 'gear-img', alt: gear.title %>
-            <% else %>
-              <div class="no-image-placeholder">
-                <p>No image available</p>
+        <div class="col-md-4">
+          <div class="card mb-4 rounded-4 adver-shadow">
+
+              <% if gear.photo.present? %>
+                <div class="bike-view-frame">
+                  <%= cl_image_tag(gear.photo.key, class: "booking-view") %>
+                </div>
+              <%else%>
+                <div class="bike-image"></div>
+              <%end%>
+
+              <!-- Verification or user owner -->
+              <% if user_signed_in? && gear.owned_by?(current_user) %>
+              <div class="msg-at-image">
+                <span class="border border-2 border-success fs-4 text-success ps-2 pe-2 rounded-4" style="background-color: #ffffff;">Your Item</span>
               </div>
-            <% end %>
-            <div class="gear-info">
-              <h3><%= gear.title %></h3>
-              <p><%= number_to_currency(gear.price_per_day, unit: "£") %> per day</p>
-              <%= link_to 'View Details', gear_path(gear), class: 'btn btn-primary' %>
-            </div>
+              <% end %>
+
+              <div class="card-body text-center pb-4">
+                <p class="card-title fw-bold fs-4 mb-4"><%= gear.title %></p> <hr />
+                <p class="card-text fs-5 mb-4">Price per day: <%= gear.price_per_day %>$</p>
+                <%= link_to 'View Details', gear_path(gear), class: 'std-btn' %>
+              </div>
+
           </div>
+        </div>
         <% end %>
       </div>
+      <hr /><br />
     </div>
   </div>
 </div>
