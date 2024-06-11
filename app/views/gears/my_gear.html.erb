@@ -27,6 +27,13 @@
                   <div class="bike-image"></div>
                 <%end%>
 
+                <!-- Verification or user owner -->
+                <% if user_signed_in? && gear.owned_by?(current_user) %>
+                  <div class="msg-at-image">
+                    <span class="border border-2 border-success fs-4 text-success ps-2 pe-2 rounded-4" style="background-color: #ffffff;">Your Item</span>
+                  </div>
+                <% end %>
+
                 <div class="card-body text-center pb-4">
                 <p class="card-title fw-bold fs-4 mb-4"><%= gear.title %></p> <hr />
                 <p class="card-text fs-5 mb-4">Price per day: <%= gear.price_per_day %>$</p>
