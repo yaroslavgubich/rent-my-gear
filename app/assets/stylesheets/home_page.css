@@ -31,7 +31,7 @@ body {
   display: inline-block;
   width: 72px;
   height: 72px;
-  position: relative; 
+  position: relative;
   animation: example 2s ; /* Apply the animation */
 }
 
@@ -129,10 +129,11 @@ body {
 .central-advert {
   max-width: 100%;
   min-width: 1024px;
-  height: 200vh;
+  min-height: 100vh;
+  /* height: 200vh; */
 
   background-image: url("main_image_home_page.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -145,7 +146,7 @@ body {
   background-attachment: fixed;
   background-color: #ffffff30;
   box-shadow: 0px 0px 37px #ffffff5e;
-  height: 200vh;
+  min-height: 100vh;
 }
 
 .page-content > .legenda {
@@ -203,9 +204,10 @@ body {
 .content-box-login {
   display: inline-block;
   width: 100%;
-  height: 200vh;
+  min-width:1024px;
+  min-height: 100vh;
   background-image: url("bike_login.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -213,7 +215,7 @@ body {
 
 .login-container {
   margin: auto;
-  width: 20%;
+  width: 350px;
   margin-top: 100px;
 }
 
@@ -269,6 +271,17 @@ body {
 .shared-links-login a:hover {
   text-decoration: underline;
 }
+
+.best-deals {
+  margin: 3rem 0 1rem 0;
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 3px;
+  color: #636363;
+  text-shadow: 0 0 25px #ffffff;
+}
+
 
 /* Bike listings on Home Page */
 
@@ -345,9 +358,9 @@ body {
 .content-box-signin {
   display: inline-block;
   width: 100%;
-  height: 200vh;
+  min-height: 100vh;
   background-image: url("sign_in_background_modified.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -358,7 +371,7 @@ body {
 .content-box-new-gear {
   display: inline-block;
   width: 100%;
-  height: 200vh;
+  min-height: 100vh;
   background-image: url("new_gear_modified.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -380,6 +393,7 @@ body {
 }
 
 .std-btn {
+  display: inline-block;
   font-size: 24px;
   color: gray;
   background-color: #e2e2e2b0;
@@ -389,9 +403,187 @@ body {
   text-align: center;
   text-decoration: none;
   padding: 4px;
+  margin-bottom: 3px;
   transition: 0.7s;
 }
 
 .std-btn:hover {
-  background-color: #f0bc67bb;
+  background-color: #696969bb;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+
+/* All Bikes Page */
+.availible-bikes-advert {
+display: inline-block;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("main_image_home_page.png");
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.page-content-all-gears {
+  margin: auto;
+  width: 1280px;
+  background-attachment: fixed;
+  /* background-color: #ffffff30;
+  box-shadow: 0px 0px 37px #ffffff5e; */
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-title {
+  display: inline-block;
+  justify-content: left;
+  font-size: 27px;
+  color: white;
+  padding: 8px 20px 0px 20px;
+
+  border-bottom: 3px solid #ffffff;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.button-cell {
+  display: inline-block;
+  padding: 14px 20px 0 0;
+}
+
+.button-cell > .std-btn {
+  color: #ffffff;
+  border-color: #949998;
+}
+
+.page-content-all-gears > hr {
+  color: #ffffff;
+}
+
+.bike-image {
+  width: 100%;
+  height: 300px;
+  background-image: url("nobike.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 12px;
+}
+
+ .msg-at-image {
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+ }
+
+ /* View bike info */
+.view-card {
+  display: flex;
+  /* justify-content: space-between; */
+  padding: 20px 0px 50px 0px;
+}
+
+.view-card-img {
+  display: inline-block;
+  width: 800px;
+  height: 460px;
+  padding: 3px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+}
+
+.no-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-image: url("nobike.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.view-card-description {
+  padding: 0px 20px 0px 20px;
+  width: 500px;
+}
+
+.card-view-label {
+  color: #474747;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.card-view-description {
+  width: 100%;
+  padding: 0 8px 0 8px;
+  border-radius: 8px;
+  background-color: #9c9c9c47;
+  resize: none;
+  color: #000000;
+}
+
+.booking-view {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 300px;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.bike-view-frame {
+  width: 100%;
+  height: 300px;
+  /* border: 1px solid gray; */
+  border-radius: 8px 8px 0px 0px;
+}
+
+.view-img-full {
+  display: inline-block;
+  width: 100%;
+  height: 452px;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.booking-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.booking-menu-content {
+  display: inline-block;
+}
+
+.view-select-calendare {
+  width: 300px;
+}
+
+.adver-shadow {
+  box-shadow: 5px 5px 10px gray;
+}
+
+.info-window {
+  display: inline-block;
+  width: 100%;
+  border: 1px solid gray;
+  text-align: center;
+  padding: 20px;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 0 0 10px gray;
+  background-color: #808080a8;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
 }

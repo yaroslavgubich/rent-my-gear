@@ -1,32 +1,57 @@
-<div class="container mt-5">
-  <div class="card">
-    <div class="card-header">
-      <h1 class="card-title"><%= @gear.title %></h1>
+<div class="availible-bikes-advert">
+  <div class="page-content-all-gears">
+
+  <div class="card mt-5 login-form" style="margin: auto;">
+    <div class="card-header text-center">
+      <div class="page-title">
+        <%= @gear.title %>
+      </div>
     </div>
-    <div class="card-body">
-      <% if @gear.photo.present? %>
-        <%= cl_image_tag(@gear.photo.key, width: 200, height: 100, crop: :fit) %>
-      <% end %>
-      <p class="card-text"><strong>Description:</strong> <%= @gear.description %></p>
-      <p class="card-text"><strong>Price per day:</strong> £<%= @gear.price_per_day %></p>
-      <p class="card-text"><strong>Category:</strong> <%= @gear.category %></p>
-      <p class="card-text"><strong>Availability:</strong> <%= @gear.availability ? 'Available' : 'Not Available' %></p>
+    <div class="card-body view-card">
+
+      <!-- Adver image -->
+      <div class="view-card-img">
+        <% if @gear.photo.present? %>
+         <%= cl_image_tag(@gear.photo.key, class: "view-img-full") %>
+        <%else%>
+          <div class="no-image"></div>
+        <% end %>
+      </div>
+
+      <!-- Adver Description -->
+      <div class="view-card-description">
+        <div>
+        <!-- <p class="card-text">Category: <%= @gear.category %></p> -->
+        <p class="card-view-label">Description:<br />
+          <textarea class="card-view-description" rows="7" readonly><%= @gear.description %></textarea>
+        </p>
+        <hr />
+
+        <p class="card-view-label">Price per day:
+          <textarea class="card-view-description" rows="1" readonly><%= @gear.price_per_day %> $</textarea>
+        </p>
+        <hr />
+
+        <p class="card-view-label">Availability:
+          <textarea class="card-view-description" rows="1" readonly><%= @gear.availability ? 'Available' : 'Not Available' %></textarea>
+        </p>
+
+
+        </div>
+      </div>
     </div>
-    <div class="card-footer text-right">
-      <% if user_signed_in? && @gear.owned_by?(current_user) %>
-        <%= link_to 'Edit', edit_gear_path(@gear), class: 'btn btn-primary' %>
-        <%= link_to 'Delete', @gear, method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-danger' %>
-      <% end %>
-      <%= link_to 'Back', gears_path, class: 'btn btn-secondary' %>
-    </div>
-  </div>
+
+
+    <div class="card-footer">
 
   <% unless @gear.owned_by?(current_user) %>
     <% if @gear.availability %>
-      <div class="card mt-5">
-        <div class="card-header">
+      <div class="card mt-5 login-form">
+        <div class="card-view-label text-center">
           <h2>Book This Gear</h2>
+          <hr />
         </div>
+
         <div class="card-body">
           <%= form_with(model: [@gear, @booking], local: true) do |form| %>
             <% if @booking.errors.any? %>
@@ -39,22 +64,46 @@
                 </ul>
               </div>
             <% end %>
-            <div class="mb-3">
-              <%= form.label :start_date, class: 'form-label' %>
-              <%= form.date_field :start_date, class: 'form-control date-picker' %>
-            </div>
-            <div class="mb-3">
-              <%= form.label :end_date, class: 'form-label' %>
-              <%= form.date_field :end_date, class: 'form-control date-picker' %>
-            </div>
-            <div class="text-right">
-              <%= form.submit 'Book Now', class: 'btn btn-primary' %>
-            </div>
+
+            <!-- Booking start and end time -->
+            <div class="booking-menu">
+
+                <div class="booking-menu-content">
+                  <%= form.label :start_date, class: 'card-view-label' %>
+                  <%= form.date_field :start_date, class: 'form-control date-picker card-view-description view-select-calendare' %>
+                </div>
+
+                <div class="booking-menu-content">
+                  <%= form.label :end_date, class: 'card-view-label' %>
+                  <%= form.date_field :end_date, class: 'form-control date-picker card-view-description view-select-calendare' %>
+                </div>
+
+                <div class="booking-menu-content">
+                  <%= form.submit 'Book Now', class: 'std-btn' %>
+                </div>
+              </div>
           <% end %>
+
         </div>
       </div>
     <% end %>
   <% end %>
+  <br />
+  <hr />
+
+    <div class="text-center">
+      <% if user_signed_in? && @gear.owned_by?(current_user) %>
+        <%= link_to 'Edit', edit_gear_path(@gear), class: 'std-btn' %>
+        <%= link_to 'Delete', @gear, method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'std-btn' %>
+      <% end %>
+      <%= link_to 'Back', gears_path, class: 'std-btn' %>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+</div>
 </div>
 
 <script>
