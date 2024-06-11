@@ -34,6 +34,8 @@ class BookingsController < ApplicationController
   end
 
   def calculate_total_price(booking)
+    return 0 if booking.start_date.blank? || booking.end_date.blank?
+
     (booking.end_date - booking.start_date).to_i * booking.gear.price_per_day
   end
 end
