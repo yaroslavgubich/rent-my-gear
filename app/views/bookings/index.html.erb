@@ -8,14 +8,14 @@
       </div>
       <hr />
 
-  <% if notice %>
-    <div class="alert alert-success"><%= notice %></div>
-  <% end %>
+      <% if notice %>
+        <div class="alert alert-success"><%= notice %></div>
+      <% end %>
 
-  <div class="row">
-    <% @bookings.each do |booking| %>
-      <div class="col-md-4">
-        <div class="card mb-4 rounded-4 adver-shadow">
+      <div class="row">
+        <% @bookings.each do |booking| %>
+          <div class="col-md-4">
+            <div class="card mb-4 rounded-4 adver-shadow">
 
               <% if booking.gear.photo.present? %>
                 <div class="bike-view-frame">
@@ -32,16 +32,13 @@
                 <div class="card-view-label mb-4">Total Price: <%= booking.total_price %>$</div>
                 <%= link_to 'View Bike', gear_path(booking.gear), class: 'std-btn' %>
                 <%= form_with model: booking, method: :delete, local: true do |form| %>
-              <%= form.submit 'Cancel Booking', data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to cancel this booking?' }, class: 'std-btn' %>
-            <% end %>
-
+                  <%= form.submit 'Cancel Booking', data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to cancel this booking?' }, class: 'std-btn' %>
+                <% end %>
               </div>
 
+            </div>
           </div>
-
-          </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
-</div>
